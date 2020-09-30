@@ -1,6 +1,5 @@
 package main.java.driver;
 
-import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
@@ -37,7 +36,7 @@ public final class JDBCUtils_DBCP {
             Properties properties = new Properties();
             assert inputs != null;
             properties.load(inputs);
-            datasource = BasicDataSourceFactory.createDataSource(properties);
+            datasource = org.apache.commons.dbcp.BasicDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             e.printStackTrace();
         }
